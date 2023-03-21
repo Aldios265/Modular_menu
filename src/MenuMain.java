@@ -1,9 +1,7 @@
-import functions.ChangeLanguage;
-import functions.Function;
+import functions.*;
 import menus.Menu;
 
 public class MenuMain {
-
     static menus.MainMenu mainMenu = new menus.MainMenu();
     static menus.Settings settings = new menus.Settings();
     static Menu[] menuArray = {mainMenu, settings};
