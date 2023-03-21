@@ -12,14 +12,17 @@ public class MenuStructure {
 
         while (!exit) {
             functionFound = false;
+
             for (Menu i : menuArray) {
                 if (i.getName().equals(toExecute)) {
-
                     toExecute = MenuExecutor.mainExecutor(i);
+                    if (toExecute.equals("Назад")) {
+                        toExecute = i.getParentName();
                     }
-                    functionFound = true;
                 }
+                functionFound = true;
             }
+        }
 
 
             if (!functionFound) {
@@ -31,10 +34,10 @@ public class MenuStructure {
                 }
             }
 
+
             if (!functionFound) {
                 System.out.println("(убрать) функция не найдена");
             }
-            System.out.println("1");
         }
     }
 
