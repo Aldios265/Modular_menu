@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
-/*Данный класс, а точнее метод menuExecutor активирующий объект имплементирующий интерфейс Menu,
+/*Данный класс, а точнее метод menuExecutor активирует объект имплементирующий интерфейс Menu,
  помещенный в него в качестве параметра,
-и выводит в консоль соотвесттвующие данному объекту сообщения.
+и выводит в консоль соотвесттвующие данному объекту сообщения и считывает ответ пользователя.
 * Данный класс является универсальным и может автивировать любой объект класса */
 public class MenuExecutor {
 
@@ -44,14 +44,14 @@ public class MenuExecutor {
     }
 
 
-/*Главный метод данного класса, см.описание в самом верху*/
+/*Главный метод данного класса*/
     public static String mainExecutor(menus.Menu menu) {
 
-
+        /*Считывание полей окна меню с помощью get-методов*/
         String name = menu.getName();
         String[] options = menu.getOptions();
 
-
+        /* Активация методов данного класса */
         printHeader(name);
         printChoices(options);
         return options[userInput(options.length) - 1];
