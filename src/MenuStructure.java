@@ -8,6 +8,7 @@ public class MenuStructure {
         boolean exit = false;
         boolean functionFound = false;
         String toExecute = "Главное меню";
+        String pastExecution = "";
 
 
         while (!exit) {
@@ -36,7 +37,7 @@ public class MenuStructure {
 
 
             if (!functionFound) {
-                System.out.println("(убрать) функция не найдена");
+
             }
         }
     }
