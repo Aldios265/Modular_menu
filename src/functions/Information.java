@@ -1,7 +1,7 @@
 package functions;
 
 public class Information implements functions.Function {
-    String name = "Программа 1";
+    String name = "Информация";
 
     public void execute() {
         System.out.println("Здесь должна быть информация о вашем проекте");

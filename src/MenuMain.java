@@ -19,8 +19,9 @@ public class MenuMain {
     static ChooseProgram_Program1 program1 = new ChooseProgram_Program1();
     static ChooseProgram_Program2 program2 = new ChooseProgram_Program2();
     static ChangeLanguage_Russian changeLanguage_russian = new ChangeLanguage_Russian();
+    static Information information = new Information();
 
-    static Function[] functionArray = {program1, program2, changeLanguage_russian};
+    static Function[] functionArray = {program1, program2, changeLanguage_russian, information};
 
     public static void main(String[] args) {
         MenuStructure.menuCycle(menuArray, functionArray);

@@ -14,6 +14,7 @@ public interface Function {
     String getName();
 
     default void exit() {
+        System.out.println("\n");
         System.out.println(" Программа завершена.\n Чтобы вернуться в меню введите любой символ:");
         Scanner scanner = new Scanner(System.in);
         scanner.next();

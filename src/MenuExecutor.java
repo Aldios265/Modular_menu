@@ -9,7 +9,7 @@ public class MenuExecutor {
     /*Данный метод выводит в консоль заголовок меню*/
     public static void printHeader(String name) {
         System.out.println("\n\n\n\n\n\n");
-        System.out.println("Modular Solver");
+        System.out.println("Modular_Menu");
         System.out.println("------------");
         System.out.println(name);
         System.out.println("------------");
@@ -32,6 +32,7 @@ public class MenuExecutor {
         Scanner scanner = new Scanner(System.in);
         try {
             input = Integer.parseInt(scanner.next());
+            System.out.println("\n\n\n");
         } catch (Exception e) {
             throw new IllegalArgumentException("Введен неверный символ, ожидался номер опции");
         }
