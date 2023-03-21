@@ -5,14 +5,7 @@ import menus.*;
 
 public class MenuStructure {
 
-    static menus.MainMenu mainMenu = new menus.MainMenu();
-    static menus.Settings settings = new menus.Settings();
-    static Menu[] menuArray = {mainMenu, settings};
-
-    static ChangeLanguage changeLanguage = new ChangeLanguage();
-    static Function[] functionArray = {changeLanguage};
-
-    public static void menuCycle(Menu[] menuArray) {
+    public static void menuCycle(Menu[] menuArray, Function[] functionArray) {
         boolean exit = false;
         boolean functionFound = false;
         String toExecute = "Главное меню";
@@ -46,9 +39,5 @@ public class MenuStructure {
             }
             System.out.println("1");
         }
-    }
-
-    public static void main(String[] args) {
-        menuCycle(menuArray);
     }
 }
