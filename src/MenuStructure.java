@@ -38,23 +38,14 @@ public class MenuStructure {
                     toExecute = MenuExecutor.mainExecutor(i);
                     /*Реализация опции назад*/
                     if (toExecute.equals("Назад")) {
-                        toExecute = i.getParentName();
+                        toExecute = i[1].toString();
                     }
                     functionFound = true;
                 }
             }
 
             /*Поиск функциональной опции по полю name в массиве functionArray(массив объектов функциональных опций)*/
-            if (!functionFound) {
-                for (Function k : functionArray) {
-                    if (k.getName().equals(toExecute)) {
-                        k.execute();
-                        k.exit();
-                        toExecute = pastExecution;
-                        functionFound = true;
-                    }
-                }
-            }
+
 
             /* В случае если опция не была найдена ни в одном из массивов по именам то выполняется следующий блок кода: */
             if (!functionFound) {
