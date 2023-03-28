@@ -47,6 +47,7 @@ public class MenuExecutor {
 /*Главный метод данного класса*/
     public static String mainExecutor(menus.Menu menu) {
 
+
         /*Считывание полей окна меню с помощью get-методов*/
         String name = menu.getName();
         String[] options = menu.getOptions();
