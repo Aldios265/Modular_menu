@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class MenuStructure {
 
     /* Основной и единственный метод данного класса*/
-    public static void menuCycle(Menu[] menuArray, Function[] functionArray) {
+    public static void menuCycle(Object[][] menuArray) {
 
         /* Поле exit имеет по умолчанию значение false и, т.к на данный момент не реализована возможность
         * выхода из программы, данное значение не изменяется по ходу программы*/
@@ -28,8 +28,8 @@ public class MenuStructure {
             functionFound = false;
 
             /*Поиск окна меню по полю name в массиве menuArray(массив объектов окон меню)*/
-            for (Menu i : menuArray) {
-                if (i.getName().equals(toExecute)) {
+            for (Object[] i : menuArray) {
+                if (i[0].equals(toExecute)) {
                     /*Сохранение переменной toExecute перед присвоением ей нового значения для возможности возврата
                     * после выполнения функции*/
                     pastExecution = toExecute;
