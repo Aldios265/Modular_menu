@@ -8,7 +8,7 @@ import menus.Menu;
 public class MenuMain {
     public static void main(String[] args) {
         Menu1 menu1 = new Menu1();
-
+        MenuStructure.menuCycle(menu1.menuArray);
     }
 
 

@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 /*Данный класс, а точнее метод menuExecutor активирует объект имплементирующий интерфейс Menu,
@@ -43,14 +44,34 @@ public class MenuExecutor {
         }
     }
 
+    /* Данный метод проверяет, является ли данная часть массива меню функциональной опцией*/
+    public static boolean checkIfOption(Object[] objectArray) {
+        for (Object i: objectArray) {
+            if (!i.getClass().getName().equals("java.lang.String")) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static String[] convertToStringArray(Object[] objectArray) {
+        String[] stringArray = new String[objectArray.length];
+        if (!checkIfOption(objectArray)) {
+            for (int i = 0; i < objectArray.length; i++) {
+                stringArray[i] = objectArray[i].toString();
+            }
+        }
+        return stringArray;
+    }
+
 
 /*Главный метод данного класса*/
-    public static String mainExecutor(menus.Menu menu) {
+    public static String mainExecutor(Object[] menuOptionArray) {
 
 
         /*Считывание полей окна меню с помощью get-методов*/
-        String name = menu.getName();
-        String[] options = menu.getOptions();
+        String name = menuOptionArray[0].toString();
+        String[] options = convertToStringArray(Arrays.copyOfRange(menuOptionArray, 2, menuOptionArray.length));
 
         /* Активация методов данного класса */
         printHeader(name);
