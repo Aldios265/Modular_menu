@@ -1,5 +1,3 @@
-import functions.*;
-import menus.*;
 import java.util.Scanner;
 
 
