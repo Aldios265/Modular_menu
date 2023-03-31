@@ -73,12 +73,14 @@ public class MenuExecutor {
         String name = menuOptionArray[0].toString();
         String[] options = convertToStringArray(Arrays.copyOfRange(menuOptionArray, 2, menuOptionArray.length));
 
+
+
         /* Активация методов данного класса */
         printHeader(name);
         printChoices(options);
         return options[userInput(options.length) - 1];
-    }
 
+    }
 
 }
 
