@@ -10,7 +10,7 @@ public class MenuExample {
     данном репозитории*/
     Function info = new Function() {
         public void execute() {
-
+            System.out.println("тестовая функция");
         }
     };
 
