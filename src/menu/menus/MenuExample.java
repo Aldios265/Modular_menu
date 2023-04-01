@@ -1,6 +1,6 @@
-package Menus;
+package menu.menus;
 
-import functions.*;
+import menu.functions.*;
 
 public class MenuExample {
 
@@ -16,7 +16,7 @@ public class MenuExample {
     Function program1 = new Function() {
         @Override
         public void execute() {
-            functions.TestClass.someFunction();
+            menu.functions.TestClass.someFunction();
         }
     };
 
@@ -50,7 +50,7 @@ public class MenuExample {
 
     public Object[][] menuArray = {{"Главное меню", "Главное меню", "Выбрать программу", "Настройки", "Информация"},
             {"Выбрать программу", "Главное меню", "Программа1", "Программа2", "Назад"},
-                {"Программа1", program1},
+            {"Программа1", program1},
             {"Настройки", "Главное меню", "Сменить язык", "Назад"},
             {"Информация", info}
     };

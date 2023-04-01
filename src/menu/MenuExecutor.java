@@ -1,3 +1,5 @@
+package menu;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -18,7 +20,7 @@ public class MenuExecutor {
 
     }
     /* Данный метод выводит в консоль все варианты выбора, соответствующие данному меню вместе с их индексами,
-    * к которым прибавляется еденица(user friendly)*/
+     * к которым прибавляется еденица(user friendly)*/
     public static void printChoices(String[] possibleOptions) {
         for (int i = 0; i < possibleOptions.length; i++) {
             System.out.println((i + 1) + ") " + possibleOptions[i]);
@@ -26,8 +28,8 @@ public class MenuExecutor {
         System.out.println("Для выбора введите номер опции:");
     }
 
-/* Данный метод считывает введенное пользователем в консоль значение а также
-* в случае неправильности ввода выводит некоторые ошибки*/
+    /* Данный метод считывает введенное пользователем в консоль значение а также
+     * в случае неправильности ввода выводит некоторые ошибки*/
     public static int userInput(int length) {
         int input;
         Scanner scanner = new Scanner(System.in);
@@ -65,9 +67,8 @@ public class MenuExecutor {
     }
 
 
-/*Главный метод данного класса*/
+    /*Главный метод данного класса*/
     public static String mainExecutor(Object[] menuOptionArray) {
-
 
         /*Считывание полей окна меню с помощью get-методов*/
         String name = menuOptionArray[0].toString();

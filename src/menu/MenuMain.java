@@ -1,5 +1,6 @@
+package menu;
 
-import Menus.*;
+import menu.menus.*;
 
 
 import java.awt.*;

@@ -1,4 +1,4 @@
-package Menus;
+package menu.menus;
 
 public interface Menu {
 

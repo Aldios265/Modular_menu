@@ -1,5 +1,7 @@
+package menu;
+
 import java.util.Scanner;
-import functions.*;
+import menu.functions.*;
 
 public class FunctionExecutor {
     public static void execute(Function function) {
