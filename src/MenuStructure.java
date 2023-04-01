@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import functions.*;
 
 
 /* Данный класс выстраивает последовательность активации окон меню в зависимости от выбора пользователя.*/
@@ -28,12 +29,32 @@ public class MenuStructure {
             /*Поиск окна меню по полю name в массиве menuArray(массив объектов окон меню)*/
             for (Object[] i : menuArray) {
                 if (i[0].equals(toExecute)) {
-                    /*Сохранение переменной toExecute перед присвоением ей нового значения для возможности возврата
-                    * после выполнения функции*/
-                    pastExecution = toExecute;
-                    /*Присвоение переменной toExecute результата выполнения mainExecutor(), а именно
-                    * выбора опции пользователем*/
-                    toExecute = MenuExecutor.mainExecutor(i);
+
+                    /*Данный блок кода проверяет, соотвествтвует ли данный подмассив окну меню или функциональной опции
+                    * и вызывает соотвествующие методы в классах MenuExecutor и FunctionExecutor для активации данных
+                    * подмассивов.*/
+                    if (!MenuExecutor.checkIfOption(i)) {
+                        /*Сохранение переменной toExecute перед присвоением ей нового значения для возможности возврата
+                         * после выполнения функции*/
+                        pastExecution = toExecute;
+                        toExecute = MenuExecutor.mainExecutor(i);
+                    } else {
+                        try {
+                            Function function = (Function) i[1];
+                            FunctionExecutor.execute(function);
+                            toExecute = pastExecution;
+                        } catch (Exception e) {
+                            Function function = new Function() {
+                                @Override
+                                public void execute() {
+                                    System.out.println("Функция не найдена");
+                                }
+                            };
+                            FunctionExecutor.execute(function);
+                            toExecute = pastExecution;
+                        }
+
+                    }
                     /*Реализация опции назад*/
                     if (toExecute.equals("Назад")) {
                         toExecute = i[1].toString();
@@ -47,8 +68,10 @@ public class MenuStructure {
 
             /* В случае если опция не была найдена ни в одном из массивов по именам то выполняется следующий блок кода: */
             if (!functionFound) {
-                System.out.println("К сожалению, на данный момент данной опции не существует.\n " +
-                        "Чтобы вернуться в меню введите любой символ:");
+                System.out.println("\n\n\n");
+                System.out.println("К сожалению, на данный момент данной опции не существует.");
+                System.out.println("\n\n\n");
+                System.out.println("\"Чтобы вернуться в меню введите любой символ:\"");
                 Scanner scanner = new Scanner(System.in);
                 scanner.next();
                 toExecute = pastExecution;
