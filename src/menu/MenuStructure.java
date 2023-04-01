@@ -39,7 +39,12 @@ public class MenuStructure {
                         /*Сохранение переменной toExecute перед присвоением ей нового значения для возможности возврата
                          * после выполнения функции*/
                         pastExecution = toExecute;
-                        toExecute = MenuExecutor.mainExecutor(i);
+                        try {
+                            toExecute = MenuExecutor.mainExecutor(i);
+                        } catch (Exception e) {
+                            System.out.println("Введен невеный символ или неверный номер опции.");
+                        }
+
                     } else {
                         try {
                             Function function = (Function) i[1];
@@ -73,7 +78,7 @@ public class MenuStructure {
                 System.out.println("\n\n\n");
                 System.out.println("К сожалению, на данный момент данной опции не существует.");
                 System.out.println("\n\n\n");
-                System.out.println("\"Чтобы вернуться в меню введите любой символ:\"");
+                System.out.println("Чтобы вернуться в меню введите любой символ:");
                 Scanner scanner = new Scanner(System.in);
                 scanner.next();
                 toExecute = pastExecution;
